@@ -1,0 +1,1 @@
+# neologd-solr-elasticsearch-synonym
