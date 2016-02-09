@@ -1,0 +1,19 @@
+# Release 20160209-01
+
+### Bug fixes
+* neologd-synonyms.20160209.txt
+	execute: Delete some wrong tokens
+	commit: https://github.com/neologd/neologd-solr-elasticsearch-synonym/commit/1842717ad549b819f4ab90344e7bff91a50a2570
+
+# Release 20160202-01
+
+### New seed data
+* neologd-synonyms.20160202.txt
+	execute: Aperiodic data update on 2016-02-02
+	commit: https://github.com/neologd/neologd-solr-elasticsearch-synonym/commit/74928ad2ea1eda3968ada7e0da5fa72eb0966fb2
+
+# Release 20151020-01
+
+### Initial commit
+* neologd-synonyms.20151020.txt
+	commit: https://github.com/neologd/neologd-solr-elasticsearch-synonym/commit/e614d3644a74afb129fb967d4175f612fa251afa
