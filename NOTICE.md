@@ -1,7 +1,7 @@
 # Notices
 ## mecab-ipadic-NEologd
 
-Copyright (C) 2015 Toshinori Sato (@overlast)
+Copyright (C) 2015-2016 Toshinori Sato (@overlast)
 
       https://github.com/neologd/mecab-ipadic-neologd
 
