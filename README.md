@@ -58,6 +58,14 @@ You can install or can update(overwritten) the recent neologd-solr-elasticsearch
 
     $ ./bin/install-neologd-solr-elasticsearch-synonym -n
 
+If you want to install recent synonyms file to optional directory, you can use "-p" option.
+
+    $ ./bin/install-neologd-solr-elasticsearch-synonym -n -p /absolute/path/where/you/want/to/install
+
+You can check useful command line option using "-h" option.
+
+    $ ./bin/install-mecab-ipadic-neologd -h
+
 ### How to use neologd-solr-elasticsearch-synonym
 When you want to use neologd-solr-elasticsearch-synonym, you should set the path of synonyms file as a value of synonyms_path property of Elasticsearch/Solr.
 
@@ -69,8 +77,7 @@ When you want to use neologd-solr-elasticsearch-synonym, you should set the path
                 "analyzer" : {
                     "synonym" : {
                         "tokenizer" : "kuromoji_neologd_tokenizer",
-                            "filter" : ["synonym"]
-                        }
+                        "filter" : ["synonym"]
                     }
                 },
                 "filter" : {
