@@ -2,7 +2,7 @@
 
 # Copyright (C) 2015-2016 Toshinori Sato (@overlast)
 #
-#       https://github.com/neologd/neologd-solr-elasticsearch-synonym
+#       https://github.com/neologd/neologd-solr-elasticsearch-synonyms
 #
 # Licensed under the Apache License, Version 2.0 (the &quot;License&quot;);
 # you may not use this file except in compliance with the License.
@@ -19,14 +19,14 @@
 set -e
 
 BASEDIR=$(cd $(dirname $0);pwd)
-PROGRAM_NAME=install-neologd-solr-elasticsearch-synonym
+PROGRAM_NAME=install-neologd-solr-elasticsearch-synonyms
 ECHO_PREFIX="[${PROGRAM_NAME}] :"
 
-VERSION="install-neologd-solr-elasticsearch-synonym version 0.0.1"
+VERSION="install-neologd-solr-elasticsearch-synonyms version 0.0.1"
 
 usage() {
     echo "Usage: $PROGRAM_NAME [OPTIONS]"
-    echo "  This script is the installer of neologd-solr-elasticsearch-synonym"
+    echo "  This script is the installer of neologd-solr-elasticsearch-synonyms"
     echo
     echo "Options:"
     echo "  -h, --help"
@@ -40,7 +40,7 @@ usage() {
     echo "     If you want to create a symbolic link as a super user"
     echo
     echo "  -n, --newest"
-    echo "     If you want to update neologd-solr-elasticsearch-synonym"
+    echo "     If you want to update neologd-solr-elasticsearch-synonyms"
     echo
     exit 1
 }
@@ -114,13 +114,13 @@ if [ ${WANNA_UPDATE} -eq 1 ]; then
         echo "$ECHO_PREFIX     Status code : ${STATUS_CODE}"
         echo "$ECHO_PREFIX Update error, please retry after re-connecting to network"
         echo "$ECHO_PREFIX Or you can try to install without updating option(-n)"
-        echo "$ECHO_PREFIX     \$ ./bin/install-neologd-solr-elasticsearch-synonym"
+        echo "$ECHO_PREFIX     \$ ./bin/install-neologd-solr-elasticsearch-synonyms"
         exit 1
     fi
 
     echo
     if [ `git log refs/heads/master --pretty=%H | head -1` = `git ls-remote origin -h refs/heads/master |cut -f1` ]; then
-        echo "$ECHO_PREFIX neologd-solr-elasticsearch-synonym is already up-to-date"
+        echo "$ECHO_PREFIX neologd-solr-elasticsearch-synonyms is already up-to-date"
     else
         echo "$ECHO_PREFIX Get the newest updated information using git"
         cd ${BASEDIR}/../
@@ -128,9 +128,9 @@ if [ ${WANNA_UPDATE} -eq 1 ]; then
         git reset --hard origin/master
     fi
 else
-    echo "$ECHO_PREFIX You should execute the following command if you want to install newest version of install-neologd-solr-elasticsearch-synonym"
+    echo "$ECHO_PREFIX You should execute the following command if you want to install newest version of install-neologd-solr-elasticsearch-synonyms"
     echo
-    echo "    $ bin/install-neologd-solr-elasticsearch-synonym -n"
+    echo "    $ bin/install-neologd-solr-elasticsearch-synonyms -n"
     echo
     sleep 3
 fi
@@ -140,7 +140,7 @@ if [ -z ${INSTALL_PATH_PREFIX} ]; then
 fi
 
 echo ""
-echo "$ECHO_PREFIX neologd-solr-elasticsearch-synonym will be create symbolic link to ${INSTALL_PATH_PREFIX}"
+echo "$ECHO_PREFIX neologd-solr-elasticsearch-synonyms will be create symbolic link to ${INSTALL_PATH_PREFIX}"
 echo ""
 sleep 3
 
@@ -163,12 +163,12 @@ if [ $? -ne 0 ]; then
     exit 1
 fi
 
-echo "$ECHO_PREFIX OK. Let's install neologd-solr-elasticsearch-synonym."
-${BASEDIR}/../libexec/install-neologd-solr-elasticsearch-synonym.sh -p ${INSTALL_PATH_PREFIX} -u ${IS_AS_SUDOER}
+echo "$ECHO_PREFIX OK. Let's install neologd-solr-elasticsearch-synonyms."
+${BASEDIR}/../libexec/install-neologd-solr-elasticsearch-synonyms.sh -p ${INSTALL_PATH_PREFIX} -u ${IS_AS_SUDOER}
 
 if [ $? -ne 0 ]; then
     echo ""
-    echo "$ECHO_PREFIX Failed to install neologd-solr-elasticsearch-synonym"
+    echo "$ECHO_PREFIX Failed to install neologd-solr-elasticsearch-synonyms"
     exit 1
 fi
 

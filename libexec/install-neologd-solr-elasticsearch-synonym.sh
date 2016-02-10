@@ -2,7 +2,7 @@
 
 # Copyright (C) 2015-2016 Toshinori Sato (@overlast)
 #
-#       https://github.com/neologd/neologd-solr-elasticsearch-synonym
+#       https://github.com/neologd/neologd-solr-elasticsearch-synonyms
 #
 # Licensed under the Apache License, Version 2.0 (the &quot;License&quot;);
 # you may not use this file except in compliance with the License.
@@ -19,7 +19,7 @@
 set -e
 
 BASEDIR=$(cd $(dirname $0);pwd)
-ECHO_PREFIX="[install-neologd-solr-elasticsearch-synonym] :"
+ECHO_PREFIX="[install-neologd-solr-elasticsearch-synonyms] :"
 
 echo "$ECHO_PREFIX Start.."
 
@@ -40,7 +40,7 @@ LATEST_SYNONYM_FILE_NAME=neologd-synonyms.txt
 
 if [ ! -e ${INSTALL_DIR_PATH} ]; then
     echo "${ECHO_PREFIX} ${INSTALL_DIR_PATH} isn't there."
-    echo "${ECHO_PREFIX} You should execute bin/install-neologd-solr-elasticsearch-synonym first."
+    echo "${ECHO_PREFIX} You should execute bin/install-neologd-solr-elasticsearch-synonyms first."
     exit 1
 fi
 
@@ -79,7 +79,7 @@ if [ -f ${INSTALL_DIR_PATH}/${LATEST_SYNONYM_FILE_NAME} ]; then
     echo "${ECHO_PREFIX} When you use Elasticsearch, you can set ${LATEST_SYNONYM_FILE_NAME} as a value of synonyms_path property of Synonym Token Filter."
     echo "    Reference: https://www.elastic.co/guide/en/elasticsearch/reference/current/analysis-synonym-tokenfilter.html"
     echo ""
-    echo "${ECHO_PREFIX} Usage of neologd-solr-elasticsearch-synonym is here."
+    echo "${ECHO_PREFIX} Usage of neologd-solr-elasticsearch-synonyms is here."
     echo "Usage:"
     echo "    Example of snippet of config of Elasticsearch:"
     echo "        {"

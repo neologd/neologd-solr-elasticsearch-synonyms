@@ -1,7 +1,7 @@
-# neologd-solr-elasticsearch-synonym : Elasticsearch と Solr 用の日本語名詞のシノニムファイル
+# neologd-solr-elasticsearch-synonyms : Elasticsearch と Solr 用の日本語名詞のシノニムファイル
 
 ## Overview
-neologd-solr-elasticsearch-synonym は Solr synonyms フォーマットな日本語名詞のシノニムファイルです。
+neologd-solr-elasticsearch-synonyms は Solr synonyms フォーマットな日本語名詞のシノニムファイルです。
 
 このシノニムファイルは mecab-ipadic-NEologd と共通な大量の名詞の表記ゆれ文字列を含んでいます。
 
@@ -37,31 +37,31 @@ neologd-solr-elasticsearch-synonym は Solr synonyms フォーマットな日本
 
 初回は以下のコマンドでgit cloneしてください。
 
-    $ git clone --depth 1 https://github.com/neologd/neologd-solr-elasticsearch-synonym.git
+    $ git clone --depth 1 https://github.com/neologd/neologd-solr-elasticsearch-synonyms.git
 
 または
 
-    $ git clone --depth 1 git@github.com:neologd/neologd-solr-elasticsearch-synonym.git
+    $ git clone --depth 1 git@github.com:neologd/neologd-solr-elasticsearch-synonyms.git
 
 もしも、リポジトリの全変更履歴を入手したい方は「--depth 1」を消してcloneして下さい。
 
-### neologd-solr-elasticsearch-synonym のインストール/更新
+### neologd-solr-elasticsearch-synonyms のインストール/更新
 #### Step.1
 上記の準備でcloneしたリポジトリに移動します。
 
-    $ cd neologd-solr-elasticsearch-synonym
+    $ cd neologd-solr-elasticsearch-synonyms
 
 #### Step.2
 以下のコマンドを実行するとインストール、または、上書きによる最新版への更新ができます。
 
-    $ ./bin/install-neologd-solr-elasticsearch-synonym -n
+    $ ./bin/install-neologd-solr-elasticsearch-synonyms -n
 
 #### Step.3
 インストールがうまくいったら neologd-synonyms.txt の中身を確認しておきましょう。
 
-インストール先はオプション未指定の場合 neologd-solr-elasticsearch-synonym/synonyms ディレクトリです。
+インストール先はオプション未指定の場合 neologd-solr-elasticsearch-synonyms/synonyms ディレクトリです。
 
-    $ cd neologd-solr-elasticsearch-synonym
+    $ cd neologd-solr-elasticsearch-synonyms
     $ cat synonyms/neologd-synonyms.txt | grep "お好み焼き"
     "おこのみやき", "おこのみヤキ", "おこのみ焼", "おこのみ焼き", "おコノミやき",
     "おコノミヤキ", "お コノミ焼", "おコノミ焼き", "お好みやき", "お好みヤキ", "お好み焼",
@@ -72,23 +72,23 @@ neologd-solr-elasticsearch-synonym は Solr synonyms フォーマットな日本
 
 インストーラーは最新のシノニムファイル(neologd-synonyms.YYYYMMDD.txt)に対する固定のシンボリックリンクを作成します。
 
-    $ ls -al neologd-solr-elasticsearch-synonym/synonyms
+    $ ls -al neologd-solr-elasticsearch-synonyms/synonyms
     合計 5756
     drwxrwxr-x 2 overlast overlast    4096  2月 10 18:26 2016 .
     drwxrwxr-x 8 overlast overlast    4096  2月 10 19:00 2016 ..
     -rw-rw-r-- 1 overlast overlast 5878409  2月 10 18:26 2016 neologd-synonyms.20160209.txt
-    lrwxrwxrwx 1 overlast overlast      99  2月 10 18:26 2016 neologd-synonyms.txt -> /any/where/neologd-solr-elasticsearch-synonym/bin/../synonyms/neologd-synonyms.20160209.txt
+    lrwxrwxrwx 1 overlast overlast      99  2月 10 18:26 2016 neologd-synonyms.txt -> /any/where/neologd-solr-elasticsearch-synonyms/bin/../synonyms/neologd-synonyms.20160209.txt
 
 もしも最新のシノニムファイルを任意の場所にインストールしたい場合は "-p" オプションを使ってください。
 
-    $ ./bin/install-neologd-solr-elasticsearch-synonym -n -p /absolute/path/where/you/want/to/install
+    $ ./bin/install-neologd-solr-elasticsearch-synonyms -n -p /absolute/path/where/you/want/to/install
 
 便利なコマンドラインオプションは "-h" オプションを使うと確認できます。
 
     $ ./bin/install-mecab-ipadic-neologd -h
 
-### neologd-solr-elasticsearch-synonym の使い方
-neologd-solr-elasticsearch-synonym を使いたい時は、シノニムファイルの絶対パスを Elasticsearch/Solr の synonyms_path 属性などの値として設定してください。
+### neologd-solr-elasticsearch-synonyms の使い方
+neologd-solr-elasticsearch-synonyms を使いたい時は、シノニムファイルの絶対パスを Elasticsearch/Solr の synonyms_path 属性などの値として設定してください。
 
 最新のシノニムファイルに対するシンボリックリンクの位置は固定なので、シノニムファイルを更新する際に検索サーバーの設定ファィルを更新する必要はありません。
 
@@ -123,28 +123,28 @@ neologd-solr-elasticsearch-synonym を使いたい時は、シノニムファイ
     </fieldType>
 
 ## Bibtex
-もしも neologd-solr-elasticsearch-synonym を論文や書籍、アプリ、サービスから参照して下さる場合は、以下の bibtex をご利用ください。
+もしも neologd-solr-elasticsearch-synonyms を論文や書籍、アプリ、サービスから参照して下さる場合は、以下の bibtex をご利用ください。
 
     @misc{sato2016neologdsolrelasticsearchsynonym
-        title  = {neologd-solr-elasticsearch-synonym - Japanese noun synonyms file for Elasticsearch and Solr},
+        title  = {neologd-solr-elasticsearch-synonyms - Japanese noun synonyms file for Elasticsearch and Solr},
         author = {Toshinori, Sato},
-        url    = {https://github.com/neologd/neologd-solr-elasticsearch-synonym},
+        url    = {https://github.com/neologd/neologd-solr-elasticsearch-synonyms},
         year   = {2015}
     }
 
 ## Star please !!
-neologd-solr-elasticsearch-synonym を使ってみて良い結果が得られた時は、ぜひこのリポジトリの Star ボタンを押して下さい。
+neologd-solr-elasticsearch-synonyms を使ってみて良い結果が得られた時は、ぜひこのリポジトリの Star ボタンを押して下さい。
 
 とても大きな励みになります。
 
 ## NOTICE
 このプロジェクトは他のOSSプロジェクトに依存しています。下記をご参照下さい。
 
-- https://github.com/neologd/neologd-solr-elasticsearch-synonym/blob/master/NOTICE.md
+- https://github.com/neologd/neologd-solr-elasticsearch-synonyms/blob/master/NOTICE.md
 
 ## Copyrights
 Copyright (c) 2015-2016 Toshinori Sato (@overlast) All rights reserved.
 
 ライセンスは Apache License, Version 2.0 です。下記をご参照下さい。
 
-- https://github.com/neologd/neologd-solr-elasticsearch-synonym/blob/master/COPYING
+- https://github.com/neologd/neologd-solr-elasticsearch-synonyms/blob/master/COPYING
