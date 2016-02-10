@@ -54,10 +54,43 @@ Move to a directory of the repository which was cloned in the above preparation.
     $ cd neologd-solr-elasticsearch-synonym
 
 #### Step.2
-
 You can install or can update(overwritten) the recent neologd-solr-elasticsearch-synonym by following command.
 
     $ ./bin/install-neologd-solr-elasticsearch-synonym -n
+
+### How to use neologd-solr-elasticsearch-synonym
+When you want to use neologd-solr-elasticsearch-synonym, you should set the path of synonyms file as a value of synonyms_path property of Elasticsearch/Solr.
+
+#### Example of snippet of config of Elasticsearch
+
+    {
+        "index" : {
+            "analysis" : {
+                "analyzer" : {
+                    "synonym" : {
+                        "tokenizer" : "kuromoji_neologd_tokenizer",
+                            "filter" : ["synonym"]
+                        }
+                    }
+                },
+                "filter" : {
+                    "synonym" : {
+                        "type" : "synonym",
+                        "synonyms_path" : "/absolute/path/of/neologd-synonym.txt"
+                    }
+                }
+            }
+        }
+    }
+
+#### Example of snippet of config of Solr
+
+    <fieldType name="text_ja" class="solr.TextField" positionIncrementGap="100">
+        <analyzer>
+            <tokenizer class="solr.JapaneseTokenizerFactory"/>
+            <filter class="solr.SynonymFilterFactory" synonyms="/absolute/path/of/neologd-synonym.txt" ignoreCase="true" expand="false">
+        </analyzer>
+    </fieldType>
 
 ## Bibtex
 
