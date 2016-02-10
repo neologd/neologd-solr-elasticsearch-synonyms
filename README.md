@@ -71,7 +71,7 @@ Default install location is neologd-solr-elasticsearch-synonym/synonyms director
     "オ好みヤキ", "オ好み焼", "オ好み焼き", "オ好やき", "オ好ヤキ", "オ好焼", "オ好焼き"
     => "お好み焼き"
 
-Our installer create a symbolic link to recent synonyms file(neologd-synonyms.YYYYMMDD.txt).
+Our installer creates a symbolic link to recent synonyms file(neologd-synonyms.YYYYMMDD.txt).
 
     $ ls -al neologd-solr-elasticsearch-synonym/synonyms
     合計 5756
