@@ -58,7 +58,16 @@ You can install or can update(overwritten) the recent neologd-solr-elasticsearch
 
     $ ./bin/install-neologd-solr-elasticsearch-synonym -n
 
-If you want to install recent synonyms file to optional directory, you can use "-p" option.
+Default install location is neologd-solr-elasticsearch-synonym/synonyms directory.
+
+    $ ls -al neologd-solr-elasticsearch-synonym/synonyms
+    合計 5756
+    drwxrwxr-x 2 overlast overlast    4096  2月 10 18:26 2016 .
+    drwxrwxr-x 8 overlast overlast    4096  2月 10 19:00 2016 ..
+    -rw-rw-r-- 1 overlast overlast 5878409  2月 10 18:26 2016 neologd-synonyms.20160209.txt
+    lrwxrwxrwx 1 overlast overlast      99  2月 10 18:26 2016 neologd-synonyms.txt -> /any/where/neologd-solr-elasticsearch-synonym/bin/../synonyms/neologd-synonyms.20160209.txt
+
+If you want to install recent synonyms file to optional location, you can use "-p" option.
 
     $ ./bin/install-neologd-solr-elasticsearch-synonym -n -p /absolute/path/where/you/want/to/install
 
