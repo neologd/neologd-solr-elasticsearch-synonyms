@@ -58,7 +58,20 @@ You can install or can update(overwritten) the recent neologd-solr-elasticsearch
 
     $ ./bin/install-neologd-solr-elasticsearch-synonym -n
 
+#### Step.3
+You should check content of neologd-synonyms.txt.
+
 Default install location is neologd-solr-elasticsearch-synonym/synonyms directory.
+
+    $cat synonyms/neologd-synonyms.txt | grep "お好み焼き"
+    "おこのみやき", "おこのみヤキ", "おこのみ焼", "おこのみ焼き", "おコノミやき",
+    "おコノミヤキ", "お コノミ焼", "おコノミ焼き", "お好みやき", "お好みヤキ", "お好み焼",
+    "お好やき", "お好ヤキ", "お好焼", "お好焼き", "オこのみやき", "オこのみヤキ", "オこのみ焼",
+    "オこのみ焼き", "オコノミやき", "オコノミヤキ", "オコノミ焼", "オコノミ焼き", "オ好みやき",
+    "オ好みヤキ", "オ好み焼", "オ好み焼き", "オ好やき", "オ好ヤキ", "オ好焼", "オ好焼き"
+    => "お好み焼き"
+
+Our installer create a symbolic link to recent synonyms file(neologd-synonyms.YYYYMMDD.txt).
 
     $ ls -al neologd-solr-elasticsearch-synonym/synonyms
     合計 5756
