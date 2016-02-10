@@ -18,6 +18,8 @@ When you want to define synonyms of common nouns, neologisms and Named Entities,
     - One of the largest Japanese OSS synonyms file
 - Update process of this synonyms file will semi-automatically run on development server.
     - I'm planning to update this synonyms file at the timing of updating a orthographic variant dictionary of mecab-ipadic-NEologd.
+- The location of symbolic link to recent synonyms file is permanent
+    - When you will updating synonyms file, it's unnecessary to update a configure file of search server.
 
 ### Cons
 - Can't distinguish between orthographic variant of nouns and same spelling homonyms.
@@ -91,6 +93,8 @@ You can check useful command line option using "-h" option.
 
 ### How to use neologd-solr-elasticsearch-synonym
 When you want to use neologd-solr-elasticsearch-synonym, you should set the path of synonyms file as a value of synonyms_path property of Elasticsearch/Solr.
+
+When you will updating synonyms file, it's unnecessary to update a configure file of search server, because the location of symbolic link to recent synonyms file is permanent.
 
 #### Example of snippet of config of Elasticsearch
 
