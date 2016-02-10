@@ -49,7 +49,7 @@ If you need all log of mecab-ipadic-neologd.git, you should clone the repository
 
 ### How to install/use/update neologd-solr-elasticsearch-synonym
 #### Step.1
-Move to a directory of the repository which was cloned in the above preparation.
+Move to neologd-solr-elasticsearch-synonym directory  which was cloned in the above preparation.
 
     $ cd neologd-solr-elasticsearch-synonym
 
