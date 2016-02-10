@@ -13,6 +13,8 @@ neologd-solr-elasticsearch-synonym は Solr synonyms フォーマットな日本
     - 最も大きい OSS な日本語のシノニムファイルのひとつ
 - シノニムファイルの更新処理がサーバ上で半自動化されている
     - mecab-ipadic-NEologd の表記ゆれ辞書が更新された時に、シノニムファイルを更新する予定
+- 最新のシノニムファイルに対するシンボリックリンクの位置が固定
+    - 更新する際に検索サーバーの設定ファィルの更新が不要
 
 ### 欠点
 - 表記ゆれと同表記異義語の区別をつけることはできない
@@ -87,6 +89,8 @@ neologd-solr-elasticsearch-synonym は Solr synonyms フォーマットな日本
 
 ### neologd-solr-elasticsearch-synonym の使い方
 neologd-solr-elasticsearch-synonym を使いたい時は、シノニムファイルの絶対パスを Elasticsearch/Solr の synonyms_path 属性などの値として設定してください。
+
+最新のシノニムファイルに対するシンボリックリンクの位置は固定なので、シノニムファイルを更新する際に検索サーバーの設定ファィルを更新する必要はありません。
 
 #### 例: Elasticsearch の config の一部
 
