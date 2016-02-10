@@ -14,9 +14,10 @@ When you want to define synonyms of common nouns, neologisms and Named Entities,
 
 ## Pros and Cons
 ### Pros
-- Recorded about 48,000 pairs (mapping to 0.3 million tokens) of orthographic variant of nouns.
+- Recorded about 48,000 pairs (mapping from about 0.3 million tokens) of orthographic variant of nouns.
+    - One of the largest OSS synonyms file in Japan
 - Update process of this synonyms file will semi-automatically run on development server.
-    - I'm planning to renew this synonyms file at least updating a orthographic variant dictionary of mecab-ipadic-NEologd.
+    - I'm planning to update this synonyms file at the timing of updating a orthographic variant dictionary of mecab-ipadic-NEologd.
 
 ### Cons
 - Can't distinguish between orthographic variant of nouns and same spelling homonyms.
@@ -56,7 +57,7 @@ Move to a directory of the repository which was cloned in the above preparation.
 
 You can install or can update(overwritten) the recent neologd-solr-elasticsearch-synonym by following command.
 
-    $ ./bin/neologd-solr-elasticsearch-synonym -n
+    $ ./bin/install-neologd-solr-elasticsearch-synonym -n
 
 ## Bibtex
 
