@@ -90,12 +90,12 @@ if [ -f ${INSTALL_DIR_PATH}/${LATEST_SYNONYM_FILE_NAME} ]; then
     echo '                            "tokenizer" : "kuromoji_neologd_tokenizer",'
     echo '                            "filter" : ["synonym"]'
     echo '                        }'
-    echo '                    }'
-    echo '                },'
-    echo '                "filter" : {'
-    echo '                    "synonym" : {'
-    echo '                        "type" : "synonym",'
-    echo "                        \"synonyms_path\" : \"${INSTALL_DIR_PATH}/${LATEST_SYNONYM_FILE_NAME}\""
+    echo '                    },'
+    echo '                    "filter" : {'
+    echo '                        "synonym" : {'
+    echo '                            "type" : "synonym",'
+    echo "                            \"synonyms_path\" : \"${INSTALL_DIR_PATH}/${LATEST_SYNONYM_FILE_NAME}\""
+    echo '                        }'
     echo '                    }'
     echo '                }'
     echo '            }'
