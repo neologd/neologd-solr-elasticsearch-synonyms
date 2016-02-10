@@ -135,6 +135,11 @@ Please use the following bibtex, when you refer mecab-ipadic-NEologd from your p
 ## Star please !!
 Please star this github repository if mecab-ipadic-NEologd is very useful to your project ;)
 
+## NOTICE
+This project is depending to other OSS projects. Please check following link.
+
+- https://github.com/neologd/neologd-solr-elasticsearch-synonym/blob/master/NOTICE.md
+
 ## Copyrights
 Copyright (c) 2015-2016 Toshinori Sato (@overlast) All rights reserved.
 
