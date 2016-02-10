@@ -8,9 +8,9 @@ README.ja.md is written in Japanese.
 ## Overview
 neologd-solr-elasticsearch-synonym is Japanese noun synonyms file which is written in Solr synonyms format.
 
-This synonyms file includes many orthographic variant of nouns, which are common orthographic variant strings with mecab-ipadic-NEologd.
+This synonyms file includes many orthographic variant strings of nouns, which are common orthographic variant strings with mecab-ipadic-NEologd.
 
-When you want to define synonyms of common nouns, neologisms and Named Entities, to begin with this synonyms file is one of better choice.
+When you want to define synonyms of common nouns, neologisms and Named Entities, to try to apply this synonyms file is one of better choice.
 
 ## Pros and Cons
 ### Pros
@@ -26,7 +26,7 @@ When you want to define synonyms of common nouns, neologisms and Named Entities,
 ## Getting started
 
 ### Dependencies
-This synonyms file is mainly used with following open source search server.
+This synonyms file can use with following open source search server.
 
 - Elasticsearch
 
@@ -63,7 +63,8 @@ You should check content of neologd-synonyms.txt.
 
 Default install location is neologd-solr-elasticsearch-synonym/synonyms directory.
 
-    $cat synonyms/neologd-synonyms.txt | grep "お好み焼き"
+    $ cd neologd-solr-elasticsearch-synonym
+    $ cat synonyms/neologd-synonyms.txt | grep "お好み焼き"
     "おこのみやき", "おこのみヤキ", "おこのみ焼", "おこのみ焼き", "おコノミやき",
     "おコノミヤキ", "お コノミ焼", "おコノミ焼き", "お好みやき", "お好みヤキ", "お好み焼",
     "お好やき", "お好ヤキ", "お好焼", "お好焼き", "オこのみやき", "オこのみヤキ", "オこのみ焼",
@@ -71,7 +72,7 @@ Default install location is neologd-solr-elasticsearch-synonym/synonyms director
     "オ好みヤキ", "オ好み焼", "オ好み焼き", "オ好やき", "オ好ヤキ", "オ好焼", "オ好焼き"
     => "お好み焼き"
 
-Our installer creates a symbolic link to recent synonyms file(neologd-synonyms.YYYYMMDD.txt).
+Our installer creates a permanent symbolic link to recent synonyms file(neologd-synonyms.YYYYMMDD.txt).
 
     $ ls -al neologd-solr-elasticsearch-synonym/synonyms
     合計 5756
