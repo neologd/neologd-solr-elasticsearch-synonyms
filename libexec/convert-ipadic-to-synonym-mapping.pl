@@ -41,7 +41,11 @@ close $in;
 open my $out, '>:utf8', $out_file;
 foreach my $baseform (sort {$a cmp $b} keys %mapping) {
     my @surfaces = @{$mapping{$baseform}};
-    my $key = join '", "', @surfaces;
-    print $out '"'.$key.'" => "'.$baseform.'"'."\n";
+    #my $key = join '", "', @surfaces;
+    my $key = join ', ', @surfaces;
+    #print $out '"'.$key.'" => "'.$baseform.'"'."\n";
+    #print $out '"'.$key.' => '.$baseform.'"'."\n";
+    #print $out $key.' => '.$baseform."\n";
+    print $out $baseform.', '.$key."\n";
 }
 close $out;
