@@ -96,7 +96,7 @@ When you will updating synonyms file, it's unnecessary to update a configure fil
 And you should set boolean value(true/false) to a value of 'expand' attribute explicitly.
 
 ### About a function of 'expand' attribute
-If format of a synonym file is CSV and a value of 'expand' attribute is null, Elasticsearch and Solr will generate mappings between each strings in a synonym entry using [addInternal()](https://apache.googlesource.com/lucene-solr/+/trunk/lucene/analysis/common/src/java/org/apache/lucene/analysis/synonym/SolrSynonymParser.java#80) method of SolrSynonymParser class of Lucene.
+If format of a synonym file is CSV and a value of 'format' attribute is null, Elasticsearch and Solr will generate mappings between each strings in a synonym entry using [addInternal()](https://apache.googlesource.com/lucene-solr/+/trunk/lucene/analysis/common/src/java/org/apache/lucene/analysis/synonym/SolrSynonymParser.java#80) method of SolrSynonymParser class of Lucene.
 
 There are two mapping methods. You should select a mapping method using 'expand' attribute.
 
