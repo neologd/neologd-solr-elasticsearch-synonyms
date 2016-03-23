@@ -1,3 +1,10 @@
+# Release 20160323-01
+
+### New seed data
+* archive/neologd-synonyms.20160323.txt.xz
+	execute: Update algorithm to generate orthographical variant sequences
+	commit: https://github.com/neologd/neologd-solr-elasticsearch-synonyms/commit/f7391f1af913db42d19d47f8fb505acb6da3e8af
+
 # Release 20160209-01
 
 ### Bug fixes
