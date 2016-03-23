@@ -102,14 +102,14 @@ There are two mapping methods. You should select a mapping method using 'expand'
 
 In the following, we show the example of mapping result for a case of a synonym entry is 'お好み焼き,お好み焼,お好焼'.
 
-A value of 'expand' attribute | An entry of synonym file(CSV format) | Mappings which will be generated
+A value of 'expand' attribute | An entry of synonym file(CSV format) | Generated pairs
 --- | --- | ---
-true | お好み焼き,お好み焼,お好焼 | [お好み焼き=>お好み焼き, お好み焼き=>お好み焼, お好み焼き=>お好焼, お好み焼=>お好み焼き, お好み焼=>お好み焼, お好み焼=>お好焼, お好焼=>お好み焼き, お好焼=>お好み焼, お好焼=>お好焼]
+true | お好み焼き,お好み焼,お好焼 | [お好み焼き=>お好み焼, お好み焼き=>お好焼, お好み焼=>お好み焼き, お好み焼=>お好焼, お好焼=>お好み焼き, お好焼=>お好み焼]
 false | お好み焼き,お好み焼,お好焼 | [お好み焼き=>お好み焼き, お好み焼=>お好み焼き, お好焼=>お好み焼き]
 
-In a case of 'expand = true', addInternal() will generates all combinations of values of synonym entry.
+In a case of 'expand = true', addInternal() will generates all pairs of values of synonym entry.
 
-In a case of 'expand = false', addInternal() will generates combinations a value of first column and each value of all columns.
+In a case of 'expand = false', addInternal() will generates combination a value of first column and each value of all columns.
 
 We develop neologd-solr-elasticsearch-synonyms on the assumption that the value of 'expand' attribute will mainly be 'false'.
 
