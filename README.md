@@ -67,12 +67,9 @@ Default install location is neologd-solr-elasticsearch-synonyms/synonyms directo
 
     $ cd neologd-solr-elasticsearch-synonyms
     $ cat synonyms/neologd-synonyms.txt | grep "お好み焼き"
-    "おこのみやき", "おこのみヤキ", "おこのみ焼", "おこのみ焼き", "おコノミやき",
-    "おコノミヤキ", "お コノミ焼", "おコノミ焼き", "お好みやき", "お好みヤキ", "お好み焼",
-    "お好やき", "お好ヤキ", "お好焼", "お好焼き", "オこのみやき", "オこのみヤキ", "オこのみ焼",
-    "オこのみ焼き", "オコノミやき", "オコノミヤキ", "オコノミ焼", "オコノミ焼き", "オ好みやき",
-    "オ好みヤキ", "オ好み焼", "オ好み焼き", "オ好やき", "オ好ヤキ", "オ好焼", "オ好焼き"
-    => "お好み焼き"
+    お好み焼き, おこのみやき, おこのみ焼, おこのみ焼き, お好みやき, お好み焼, お好やき, お好焼,\
+    お好焼き, オコノミヤキ, オコノミ焼, オコノミ焼キ, オ好ミヤキ, オ好ミ焼, オ好ミ焼キ,\
+    オ好ヤキ, オ好焼, オ好焼キ
 
 Our installer creates a permanent symbolic link to recent synonyms file(neologd-synonyms.YYYYMMDD.txt).
 
@@ -96,7 +93,30 @@ When you want to use neologd-solr-elasticsearch-synonyms, you should set the pat
 
 When you will updating synonyms file, it's unnecessary to update a configure file of search server, because the location of symbolic link to recent synonyms file is permanent.
 
-#### Example of snippet of config of Elasticsearch
+And you should set boolean value(true/false) to a value of 'expand' attribute explicitly.
+
+### About a function of 'expand' attribute
+If format of a synonym file is CSV and a value of 'expand' attribute is null, Elasticsearch and Solr will generate mappings between each strings in a synonym entry using [addInternal()](https://apache.googlesource.com/lucene-solr/+/trunk/lucene/analysis/common/src/java/org/apache/lucene/analysis/synonym/SolrSynonymParser.java#80) method of SolrSynonymParser class of Lucene.
+
+There are two mapping methods. You should select a mapping method using 'expand' attribute.
+
+In the following, we show the example of mapping result for a case of a synonym entry is 'お好み焼き,お好み焼,お好焼'.
+
+A value of 'expand' attribute | An entry of synonym file(CSV format) | Mappings which will be generated
+--- | --- | ---
+true | お好み焼き,お好み焼,お好焼 | [お好み焼き=>お好み焼き, お好み焼=>お好み焼き, お好焼=>お好み焼き, お好み焼=>お好み焼き, お好み焼=>お好み焼, お好み焼=>お好焼, お好焼=>お好み焼き, お好焼=>お好み焼, お好焼=>お好焼]
+false | お好み焼き,お好み焼,お好焼 | [お好み焼=>お好み焼き, お好焼=>お好み焼き]
+
+In a case of 'expand = true', addInternal() will generates all combinations of values of synonym entry.
+
+In a case of 'expand = false', addInternal() will generates combinations a value of first column and each values of other columns.
+
+We develop neologd-solr-elasticsearch-synonyms on the assumption that the value of 'expand' attribute will mainly be 'false'.
+
+### Example of snippet of a configure file
+In the following, we show code examples of a configure file for loading a synonym file which can load on Elasticseach or Solr with setting false to a value of 'expand' attribute.
+
+#### For Elasticsearch (A part of config.json)
 
     {
         "index" : {
@@ -110,6 +130,7 @@ When you will updating synonyms file, it's unnecessary to update a configure fil
                 "filter" : {
                     "synonym" : {
                         "type" : "synonym",
+                        "expand": "false",
                         "synonyms_path" : "/absolute/path/of/neologd-synonym.txt"
                     }
                 }
@@ -117,7 +138,7 @@ When you will updating synonyms file, it's unnecessary to update a configure fil
         }
     }
 
-#### Example of snippet of config of Solr
+#### For Solr (A part of schema.xml)
 
     <fieldType name="text_ja" class="solr.TextField" positionIncrementGap="100">
         <analyzer>
