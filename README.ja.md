@@ -92,7 +92,7 @@ neologd-solr-elasticsearch-synonyms を使いたい時は、シノニムファ�
 また、expand 属性の値は true か false の boolean 値を明記してください。
 
 ### expand 属性の値の役割について
-Elasticsearch はシノニムファイルが CSV 形式かつ format 属性が未指定の場合に、Lucene の SolrSynonymParser の [addInternal()](https://apache.googlesource.com/lucene-solr/+/trunk/lucene/analysis/common/src/java/org/apache/lucene/analysis/synonym/SolrSynonymParser.java#80) を使ってシノニム中の文字列の対応付けをおこないます。
+Elasticsearch と Solr はシノニムファイルが CSV 形式かつ format 属性が未指定の場合に、Lucene の SolrSynonymParser の [addInternal()](https://apache.googlesource.com/lucene-solr/+/trunk/lucene/analysis/common/src/java/org/apache/lucene/analysis/synonym/SolrSynonymParser.java#80) を使ってシノニム中の文字列の対応付けをおこないます。
 
 その際の対応付け方法が2種類あるので、用途に応じて expand 属性の値を明示的に選択してください。
 
