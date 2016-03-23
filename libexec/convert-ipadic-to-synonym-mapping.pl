@@ -46,6 +46,6 @@ foreach my $baseform (sort {$a cmp $b} keys %mapping) {
     #print $out '"'.$key.'" => "'.$baseform.'"'."\n";
     #print $out '"'.$key.' => '.$baseform.'"'."\n";
     #print $out $key.' => '.$baseform."\n";
-    print $out $baseform.', '.$key."\n";
+    print $out $baseform.','.$key."\n";
 }
 close $out;
