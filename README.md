@@ -104,7 +104,7 @@ In the following, we show the example of mapping result for a case of a synonym 
 
 A value of 'expand' attribute | An entry of synonym file(CSV format) | Mappings which will be generated
 --- | --- | ---
-true | お好み焼き,お好み焼,お好焼 | [お好み焼き=>お好み焼き, お好み焼=>お好み焼き, お好焼=>お好み焼き, お好み焼=>お好み焼き, お好み焼=>お好み焼, お好み焼=>お好焼, お好焼=>お好み焼き, お好焼=>お好み焼, お好焼=>お好焼]
+true | お好み焼き,お好み焼,お好焼 | [お好み焼き=>お好み焼き, お好み焼き=>お好み焼, お好み焼き=>お好焼, お好み焼=>お好み焼き, お好み焼=>お好み焼, お好み焼=>お好焼, お好焼=>お好み焼き, お好焼=>お好み焼, お好焼=>お好焼]
 false | お好み焼き,お好み焼,お好焼 | [お好み焼=>お好み焼き, お好焼=>お好み焼き]
 
 In a case of 'expand = true', addInternal() will generates all combinations of values of synonym entry.
